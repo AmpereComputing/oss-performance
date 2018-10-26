@@ -1,0 +1,20 @@
+<?php
+namespace slowhhbbcarray016;
+
+function four() { return 4; }
+function heh() { return array('foo' => four()); }
+function bar() { return array('other' => heh()); }
+function foo() {
+  $x = bar();
+  $x['other']['foo'] = 2;
+  return $x;
+}
+function main() {
+  $x = foo();
+  echo $x['other']['foo'] . "\n";
+}
+
+<<__EntryPoint>>
+function main_array_016() {
+main();
+}

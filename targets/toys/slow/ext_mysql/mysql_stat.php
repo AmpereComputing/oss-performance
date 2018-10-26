@@ -1,0 +1,6 @@
+<?php
+namespace slowextmysqlmysqlstat;
+require_once('connect.inc');
+
+$conn = mysql_connect($host, $user, $passwd);
+var_dump(!empty(mysql_stat()));

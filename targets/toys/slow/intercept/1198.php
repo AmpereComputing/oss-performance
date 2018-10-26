@@ -1,0 +1,22 @@
+<?hh
+namespace slowintercept1198;
+
+function foo(&$a) {
+  var_dump('foo');
+  $a = 1;
+}
+function bar(&$a) {
+  var_dump('bar');
+  $a = 2;
+}
+function goo($name, $obj, $params, $data, &$done) {
+  return $data(&$params[0]);
+}
+
+<<__EntryPoint>>
+function main_1198() {
+fb_intercept('foo', 'goo', 'bar');
+$a = 0;
+foo(&$a);
+var_dump($a);
+}

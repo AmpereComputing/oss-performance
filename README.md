@@ -195,6 +195,16 @@ Wikimedia Foundation using it as a benchmark, and finding it fairly
 representative of Wikipedia. A few other pages (HHVM, talk, edit) are also
 loaded to provide a slightly more rounded workload.
 
+Toys Quick and Slow
+-------------------
+
+These test are built from the unit tests in the hhvm repository. See the README.md under the
+target/toys directory for more information. When running, it's suggested to up the retranslate
+all triggers and to allow for more delay for the admin screen.
+
+    hhvm perf.php --i-am-not-benchmarking --toys-test-quick --hhvm=$HHVM_BIN --hhvm-extra-arguments="-v Eval.JitRetranslateAllSeconds=0 -v Eval.JitRetranslateAllRequest=40000"
+    hhvm perf.php --max-delay-admin-request=10 --i-am-not-benchmarking --toys-test-slow --hhvm=$HHVM_BIN --hhvm-extra-arguments="-v Eval.JitRetranslateAllSeconds=0 -v Eval.JitRetranslateAllRequest=350000"
+
 Profiling
 =========
 

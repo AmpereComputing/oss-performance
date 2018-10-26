@@ -1,0 +1,15 @@
+<?php
+namespace slowstaticstatement1395;
+
+function test() {
+  $static_var = 3;
+  echo $static_var;
+  static $static_var;
+  $static_var ++;
+  echo $static_var;
+}
+
+<<__EntryPoint>>
+function main_1395() {
+test();
+}

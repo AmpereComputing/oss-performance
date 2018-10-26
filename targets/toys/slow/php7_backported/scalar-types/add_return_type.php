@@ -1,0 +1,19 @@
+<?php
+namespace slowphp7backportedscalartypesaddreturntype;
+
+interface One {
+    public function a();
+    public function b();
+    public function c();
+    public function d();
+}
+
+interface Two extends One {
+    public function a() : stdClass;
+    public function c() : callable;
+    public function b() : array;
+    public function d() : int;
+}
+
+?>
+Done

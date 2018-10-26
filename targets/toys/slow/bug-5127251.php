@@ -1,0 +1,29 @@
+<?hh
+namespace slowbug5127251;
+
+
+function g($x) {
+  return $x;
+}
+
+function h() {
+  return array(1,2);
+}
+
+class C {
+  var $a;
+  var $b;
+  function f($x) {
+    list($this->a, $this->b) = g($x) ? h() : tuple(null, null);
+  }
+}
+
+
+<<__EntryPoint>>
+function main_bug_5127251() {
+$obj = new C;
+for ($i = 0; $i < 5; $i++) {
+  $obj->f(!$i);
+  var_dump($obj);
+}
+}

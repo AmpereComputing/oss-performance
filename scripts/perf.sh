@@ -8,6 +8,8 @@ ARGS="$@"
 
 echo "Running as $(whoami)"
 
+sleep 5
+
 HHVM_PID="$(pgrep -xn 'hhvm')"
 PREV_PID=`expr $HHVM_PID - 1`
 if [ ! -f /tmp/perf-$HHVM_PID.map ] && [ -f /tmp/perf-$PREV_PID.map ]; then

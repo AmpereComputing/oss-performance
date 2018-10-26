@@ -1,0 +1,34 @@
+<?php
+namespace slowstring171;
+
+function foo() {
+  $a = '';
+  $a++;
+  var_dump($a);
+  $a = '';
+  ++$a;
+  var_dump($a);
+  $a = '';
+  $a--;
+  var_dump($a);
+  $a = '';
+  --$a;
+  var_dump($a);
+  $a = '@';
+  $a++;
+  var_dump($a);
+  $a = '@';
+  ++$a;
+  var_dump($a);
+  $a = '@';
+  $a--;
+  var_dump($a);
+  $a = '@';
+  --$a;
+  var_dump($a);
+}
+
+<<__EntryPoint>>
+function main_171() {
+foo();
+}

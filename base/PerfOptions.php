@@ -554,6 +554,8 @@ final class PerfOptions {
       'sugarcrm-home-page' => () ==> new SugarCRMHomePageTarget($this),
       'toys-fibonacci' => () ==> new FibonacciTarget(),
       'toys-hello-world' => () ==> new HelloWorldTarget(),
+      'toys-test-quick' => () ==> new TestQuickTarget($this),
+      'toys-test-slow' => () ==> new TestSlowTarget($this),
       'wordpress' => () ==> new WordpressTarget($this),
       'magento1' => () ==> new Magento1Target($this),
     };

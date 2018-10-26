@@ -1,0 +1,16 @@
+<?hh
+namespace slowcompilationoptimizedunpack;
+
+function foo($a, $b, $c) { var_dump($a, $b, $c); }
+
+class X {
+  const FOO=array(1,2,3);
+  static function bar() {
+    foo(...self::FOO);
+  }
+}
+
+<<__EntryPoint>>
+function main_optimized_unpack() {
+X::bar();
+}
