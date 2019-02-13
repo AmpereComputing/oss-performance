@@ -235,6 +235,9 @@ NOTE: perf.sh uses sudo, so look for the password prompt or disable it.
     
     # All supported perf event types (ARM doesn't have LLC-store-misses)
     hhvm perf.php --i-am-not-benchmarking --mediawiki --hhvm=$HHVM_BIN --exec-after-warmup="./scripts/perf.sh -e cycles,branch-misses,L1-icache-misses,L1-dcache-misses,cache-misses,iTLB-misses,dTLB-misses" --tcprint
+    
+    # Using the -d # option to perf.sh to run perf record for 5 seconds instead of 25 seconds
+    hhvm perf.php --i-am-not-benchmarking --mediawiki --hhvm=$HHVM_BIN --exec-after-warmup="./scripts/perf.sh -d 5 -e cycles,branch-misses,L1-icache-misses,L1-dcache-misses,cache-misses,iTLB-misses,dTLB-misses" --tcprint
 
 In order to have all the symbols from the the translation cache you
 may need to change the owner of /tmp/perf-<PID>.map to root.
