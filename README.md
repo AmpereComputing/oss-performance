@@ -198,6 +198,8 @@ loaded to provide a slightly more rounded workload.
 Profiling
 =========
 
+**Deprecated**: See PROFILING.md.
+
 Perf
 ----
 perf.php can keep the suite running indefinitely:
@@ -255,7 +257,10 @@ x86 this is LibXed.  Consider building hhvm using:
 Use tc-print with the generated perf.data:
 
     <HHVM SRC>/hphp/tools/tc-print/tc-print -c /tmp/<TMP DIR FOR BENCHMARK RUN>/conf.hdf -p processed-perf.data
-
+    
+    # Use the -E option if you captured events (e.g. branch-loads) other than the predefined set of events. (see tc-print -e list)
+    <HHVM SRC>/hphp/tools/tc-print/tc-print -c /tmp/<TMP DIR FOR BENCHMARK RUN>/conf.hdf -p processed-perf.data -E cycles,branch-loads,branch-load-misses
+    
 
 Contributing
 ============
