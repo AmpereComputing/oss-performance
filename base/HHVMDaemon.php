@@ -231,6 +231,10 @@ final class HHVMDaemon extends PHPEngine {
         $args->add($staticContent);
       }
 
+      if ($this->options->traceSubProcess) {
+        fprintf(STDERR, "precompiling...\n%s\n\n",
+                implode(' ', $args));
+      }
       Utils::RunCommand($args);
 
       invariant(file_exists($bcRepo), 'Failed to create bytecode repo');
